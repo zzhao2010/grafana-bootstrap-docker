@@ -1,10 +1,10 @@
 #!/bin/sh
 
 GF_API=${GF_API:-http://grafana:3000/api}
-GF_USER=${GF_USER:-admin}
-GF_PASSWORD=${GF_PASSWORD:-admin}
+GF_USER=${GF_USER:-sitespeedio}
+GF_PASSWORD=${GF_PASSWORD:-sitespeedio}
 
-BACKEND=${BACKEND:-graphite}
+BACKEND=${BACKEND:-influxdb}
 
 print_header() {
   echo " "
@@ -58,7 +58,7 @@ for datasource in `ls -1 /datasources/$BACKEND/*.json`; do
   fi
 done
 
-print_header "Adding Graphite dashboards"
+print_header "Adding InfluxDB dashboards"
 
 for dashboard in `ls -1 /dashboards/$BACKEND/*.json`; do
   dashboard_json=$( wrap_dashboard_json $dashboard )

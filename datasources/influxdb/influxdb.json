@@ -1,0 +1,13 @@
+{
+"name": "InfluxDB",
+"type": "influxdb",
+"url": "http://influxdb:8086",
+"access": "proxy",
+"isDefault": true,
+"basicAuth": true,
+"basicAuthUser":"root",
+"basicAuthPassword":"root",
+"database": "sitespeed",
+"user": "root",
+"password": "root"
+}
